@@ -22,6 +22,11 @@ class Timer extends Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
+  
+  componentDidUpdate() {
+    this.timer.current.style.color = "#" + 
+        Math.floor(Math.random() * 16777215).toString(16);
+  }
 
   render() {
     const { time, color, logText } = this.state;
